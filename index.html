@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.production.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    
+    <!-- Top Navbar -->
+    <div class="bg-gray-300 text-black py-2 px-6 flex justify-between items-center text-sm">
+        <span>920000356</span>
+        <span>English</span>
+    </div>
+    
+    <!-- Main Navbar -->
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex space-x-4 items-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3ce64FI8nWarbngjNuEETK-Nes4oFh50dPr4s0GSZCvMqZA8R2MVLqd7NYNGLcgdzYQ&usqp=CAU" alt="Logo 1" class="h-10">
+            <img src="https://www.rabet.sa/images/logos/salamah-logo.png" class="h-10">
+        </div>
+    </nav>
+    
+
+    <!-- Registration Form -->
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-full animate__animated animate__fadeIn"><!--animate make the form fade  -->
+            <h2 class="text-2xl font-semibold text-center mb-4">Permit Requester Registration</h2>
+            <form id="registrationForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium">Company Name</label>
+                        <input type="text" id="companyName" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <!-- Adds a blue glowing effect on focus -->
+
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Commercial Registration Number</label>
+                        <input type="text" id="registrationNumber" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <!-- Adds a blue glowing effect on focus -->
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required>
+                        <!-- Adds a blue glowing effect on focus -->
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Phone Number</label>
+                        <input type="tel" id="phone" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <!-- Adds a blue glowing effect on focus -->
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium">Password</label>
+                        <input type="password" id="password" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required>
+                        <!-- Adds a blue glowing effect on focus -->
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <!-- Adds a blue glowing effect on focus -->
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-2">
+                    <label class="block text-sm font-medium">Address</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <input type="text" id="city" placeholder="City" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <input type="text" id="region" placeholder="Region" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <input type="text" id="zip" placeholder="Zip Code" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium">Business Type</label>
+                    <select id="businessType" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400" required> 
+                        <!-- Adds a blue glowing effect on focus -->
+                        <option value="">Select Business Type</option>
+                        <option value="retail">Establishment</option>
+                        <option value="service">Company</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" class="ml-2 text-sm">I agree to the Terms & Conditions</label>
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-300">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="flex items-center justify-center ">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-full animate__animated animate__fadeIn"><!--animate make the form fade  -->
+            <h2 class="text-2xl font-semibold text-center mb-4">Fetch company registration details</h2>
+            <form id="" class="space-y-1">
+                <div class="grid grid-cols-2 gap-0"></div>
+                 <button onclick="fetchCompanyData()" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-300">Fetch</button>
+                 <div id="companyData" class="mt-4 text-sm text-gray-600"></div>
+                </form>
+            </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
