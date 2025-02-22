@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const companyDataDiv = document.getElementById('companyData');
-
     async function fetchCompanyData() {
+        event.preventDefault();
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/users');
             const data = await response.json();
